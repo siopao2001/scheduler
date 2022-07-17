@@ -19,7 +19,9 @@ import Appointment from "components/Appointment/index.js";
 
 import Header from   "components/Appointment/Header.js";
 
-import Header from   "components/Appointment/Empty.js";
+import Empty from   "components/Appointment/Empty.js";
+
+import Show from   "components/Appointment/Show.js";
 
 storiesOf("Button", module)
   .addParameters({
@@ -152,3 +154,9 @@ storiesOf("Appointment", module)
   .add("Appointment with Time", () => <Appointment time={"12pm"} />)
   .add("Header", () => <Header time={"12pm"} />)
   .add("Empty", () => <Empty onAdd={action("onAdd")} />)
+  .add("Show", () => <Show 
+      student={"Lydia Miller-Jones"} 
+      interviewer={interviewers}
+      onEdit={action("onEdit")}
+      onDelete={action("onDelete")}
+   />)
