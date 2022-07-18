@@ -25,6 +25,8 @@ import Show from   "components/Appointment/Show.js";
 
 import Confirm from "components/Appointment/Confirm.js";
 
+import Status from "components/Appointment/Status.js";
+
 storiesOf("Button", module)
   .addParameters({
     backgrounds: [{ name: "dark", value: "#222f3e", default: true }]
@@ -168,3 +170,4 @@ storiesOf("Appointment", module)
       onCancel={action("onCancel")}
 
    />)
+   .add("Status", () => <Status message={"Deleting"}/>)
