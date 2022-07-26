@@ -12,6 +12,7 @@ import { getAppointmentsForDay } from "helpers/selectors";
 
 import { getInterview } from "helpers/selectors";
 
+import { getInterviewersForDay } from "helpers/selectors";
 
 export default function Application(props) {
   const [state, setState] = useState({
@@ -22,14 +23,18 @@ export default function Application(props) {
   });
   const dailyAppointments = getAppointmentsForDay(state, state.day);
   const setDay = day => setState({ ...state, day })
+   
   //const setDays = days => setState(prev => ({ ...prev, days }))
   const AppointmentListData = dailyAppointments.map(appointment => {
-      const interview = getInterview(state, appointment.interview)
+      const interview = getInterview(state, appointment.interview);
+      const interviewers = getInterviewersForDay(state, state.day);
+
       return(<Appointment
        key={appointment.id}
        id={appointment.id}
        time={appointment.time}
        interview={interview} 
+       interviewers={interviewers}
      />)
    })
   useEffect(() => {
