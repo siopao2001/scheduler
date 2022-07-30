@@ -53,7 +53,7 @@ function remove() {
        {mode === EMPTY && <Empty onAdd={() => transition(CREATE)} />}
        {mode === SHOW && <Show student={props.interview.student} interviewer={props.interview.interviewer} onEdit={()=>transition(EDIT)} onDelete={()=>transition(CONFIRM)}/> }
        {mode === CREATE && <Form interviewers={props.interviewers} onCancel={back} onSave={save}/>}
-       {mode === EDIT && <Form student={props.interview.student} interviewer={props.interview.interviewer} interviewers={props.interviewers} onCancel={back} onSave={save}/>}
+       {mode === EDIT && <Form student={props.interview.student} interviewer={props.interview.interviewer.id} interviewers={props.interviewers} onCancel={back} onSave={save}/>}
        {mode === CONFIRM && <Confirm onCancel={back} onConfirm={remove} message="Are you sure you would like to delete"/>}
        {mode === SAVING && <Status message="Saving"/>}
        {mode === DELETING && <Status message="Deleting"/>}

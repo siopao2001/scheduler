@@ -46,7 +46,7 @@ export function getInterview(state, interview) {
  if(!interview){
     return null;
  }
-
+console.log(interview)
  return {
       "student": interview.student,
       "interviewer": {
