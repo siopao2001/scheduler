@@ -12,6 +12,14 @@ export default function useApplicationData() {
 
  const setDay = day => setState({ ...state, day })
 
+function getDayByName(array, dayName){
+   for(const day in array) {
+      if(array[day].name === dayName) {
+        return [day, array[day]]
+    }
+  }
+};
+
   useEffect(() => {
       Promise.all([
        axios.get("http://localhost:8001/api/days"),
@@ -25,18 +33,35 @@ export default function useApplicationData() {
   
 
   function bookInterview(id, interview) {
-        const appointment = {
+       const appointment = {
          ...state.appointments[id],
          interview: {...interview}
        };
        const appointments = {
         ...state.appointments,
         [id]: appointment
-      };
+       };
+       const dayArray = getDayByName(state.days, state.day)
+       let day = {...dayArray[1], spots: dayArray[1]}
+
+      if (!state.appointments[id].interview) {
+        day = {
+          ...dayArray[1],
+          spots: dayArray[1].spots - 1
+        } 
+      } else {
+        day = {
+          ...dayArray[1],
+          spots: dayArray[1].spots
+        } 
+      }
+      
+      let days = state.days
+      days[dayArray[0]] = day;
 
       return axios.put(`http://localhost:8001/api/appointments/${id}`, appointment)
        .then((response) => {
-          setState({...state, appointments}) 
+          setState({...state, appointments, days}) 
         })
      
   };
@@ -50,10 +75,16 @@ export default function useApplicationData() {
         ...state.appointments,
         [id]: appointment
       };
+      
+      const dayArray = getDayByName(state.days, state.day)
+      let day = {...dayArray[1], spots: dayArray[1].spots +1}
+
+      let days = state.days
+      days[dayArray[0]] = day;
 
       return axios.delete(`http://localhost:8001/api/appointments/${id}`, appointment)
        .then((response) => {
-          setState({...state, appointments}) 
+          setState({...state, appointments, days}) 
         })
 
  }
