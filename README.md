@@ -1,6 +1,6 @@
 
 # Interview Scheduler
-This is single-page app created through the React framework that allows a user to book student appointments with interviewers. 
+This is a single-page app created with the React Library that allows a user to book student appointments with interviewers. 
 
 ## Project Features
 * Interviews can be booked between Monday and Friday.
