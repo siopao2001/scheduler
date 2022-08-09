@@ -10,9 +10,9 @@ This is single-page app created through the React framework that allows a user t
 * react-scripts
 * @babel/core" 
 * storybook
-* "@testing-library/jest-dom
+* @testing-library/jest-dom
 * @testing-library/react
-* "@testing-library/react-hooks
+* @testing-library/react-hooks
 * prop-types
 * react-test-renderer
 * jest
