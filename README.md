@@ -39,4 +39,7 @@ npm test
 ```sh
 npm run storybook
 ```
-![Screen Shot 2022-08-09 at 11 42 33 AM](https://user-images.githubusercontent.com/75033003/183699673-e19c510f-181a-4908-8de1-2804d7411b69.png)![Screen Shot 2022-08-09 at 11 45 56 AM](https://user-images.githubusercontent.com/75033003/183699905-c0b8b3c6-0caa-49d6-a38f-ec1f730fdb92.png)
+![Screen Shot 2022-08-09 at 11 42 33 AM](https://user-images.githubusercontent.com/75033003/183699673-e19c510f-181a-4908-8de1-2804d7411b69.png)
+
+
+![Screen Shot 2022-08-09 at 11 45 56 AM](https://user-images.githubusercontent.com/75033003/183699905-c0b8b3c6-0caa-49d6-a38f-ec1f730fdb92.png)
