@@ -1,5 +1,5 @@
 import { useState } from "react";
-
+//function to export function to transition between modes.
 export function useVisualMode(initial) {
   const [mode, setMode] = useState(initial);
   const [history, setHistory] = useState([initial]);

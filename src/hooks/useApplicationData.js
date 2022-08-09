@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
-
+//function to export object containg state, setDay, cancelInterview, bookInterview.
 export default function useApplicationData() {
   const [state, setState] = useState({
     day: "Monday",
@@ -10,7 +10,7 @@ export default function useApplicationData() {
   });
 
   const setDay = (day) => setState({ ...state, day });
-
+  //This function returns an array with the day index and object.
   function getDayByName(array, dayName) {
     for (const day in array) {
       if (array[day].name === dayName) {

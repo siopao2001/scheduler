@@ -1,3 +1,4 @@
+//function to get all appointments associated with a day.
 export function getAppointmentsForDay(state, day) {
   let apptIDs = [];
   let apptArray = [];
@@ -16,7 +17,7 @@ export function getAppointmentsForDay(state, day) {
 
   return apptArray;
 }
-
+//function to get all interviewers associated with a day.
 export function getInterviewersForDay(state, day) {
   let interviewerIDs = [];
   let interviewerArray = [];
