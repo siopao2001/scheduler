@@ -39,7 +39,7 @@ npm test
 ```sh
 npm run storybook
 ```
-##Screenshots
+## Screenshots
 
 ![Screen Shot 2022-08-09 at 11 42 33 AM](https://user-images.githubusercontent.com/75033003/183699673-e19c510f-181a-4908-8de1-2804d7411b69.png)
 
